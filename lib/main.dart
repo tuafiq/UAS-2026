@@ -78,14 +78,14 @@ class CleanLayout extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.home_filled,
-                    color: Color.fromARGB(255, 61, 63, 62), // Warna hijau Al-Qur'an
+                    color: Colors.grey, // Warna hijau Al-Qur'an
                     size: 28,
                   ),
                   SizedBox(height: 4), // Jarak antara icon dan teks
                   Text(
                     "Beranda",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 61, 63, 62), // Warna teks sama dengan icon
+                      color: Colors.grey, // Warna teks sama dengan icon
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
@@ -116,9 +116,36 @@ class CleanLayout extends StatelessWidget {
                 ],
               ),
             ),
+
+            // --- ICON ARTIKEL + TEKS ---
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.article_outlined, // Icon artikel/kertas
+                    color: Colors.grey, 
+                    size: 28,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Artikel",
+                    style: TextStyle(
+                      color: Colors.grey, 
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // ----------------------------------
             
-            // Sisa area kosong (3 SizedBox tersisa)
+            // Sisa area kosong (2 SizedBox tersisa)
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
