@@ -23,50 +23,76 @@ class CleanLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          // Header Hijau dengan Lengkungan Putih
-          Stack(
-            children: [
-              Container(
-                height: 350,
-                width: double.infinity,
-                color: const Color(0xFF00B69F),
-              ),
-              Positioned(
-                bottom: -1,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 180,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(100),
-                      topRight: Radius.circular(100),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Header Hijau dengan Lengkungan Putih
+            Stack(
+              children: [
+                Container(
+                  height: 350,
+                  width: double.infinity,
+                  color: const Color(0xFF00B69F),
+                ),
+                Positioned(
+                  bottom: -1,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 180,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        topRight: Radius.circular(100),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const Expanded(child: SizedBox()),
-          
-          // GridView untuk Icon Layanan
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 4,
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 10,
-              children: [
-                // DI SINI TEMPAT KITA AKAN MASUKKAN ICON SATU PER SATU
               ],
             ),
-          ),
-        ],
+
+            // GridView untuk Icon Layanan
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 4,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                children: [
+                  // --- ICON AL-QURAN DI SINI ---
+                  Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFE0F2F1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.menu_book_rounded,
+                          color: Color(0xFF008E5B),
+                          size: 28,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        "Al-Qur'an",
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFF546E7A),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       
       // Bottom Navigation Bar
