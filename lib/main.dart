@@ -22,21 +22,19 @@ class CleanLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Area bawah dominan putih
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Bagian Atas: Background Hijau dengan lengkungan putih di bawahnya
+          // Header Hijau dengan Lengkungan Putih
           Stack(
             children: [
-              // Bidang Hijau Utama
               Container(
                 height: 350,
                 width: double.infinity,
-                color: const Color(0xFF00B69F), // Hijau NU Online
+                color: const Color(0xFF00B69F),
               ),
-              // Bidang Putih yang membentuk lengkungan (Kubah)
               Positioned(
-                bottom: -1, // Menutup celah pixel
+                bottom: -1,
                 left: 0,
                 right: 0,
                 child: Container(
@@ -44,23 +42,19 @@ class CleanLayout extends StatelessWidget {
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(100), // Lengkungan besar kiri
-                      topRight: Radius.circular(100), // Lengkungan besar kanan
+                      topLeft: Radius.circular(100),
+                      topRight: Radius.circular(100),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          
-          // Bagian Bawah (Body) sudah otomatis putih karena background Scaffold
-          const Expanded(
-            child: SizedBox(), 
-          ),
+          const Expanded(child: SizedBox()),
         ],
       ),
       
-      // Bottom Navigation Bar with Beranda Icon
+      // Bottom Navigation Bar
       bottomNavigationBar: Container(
         height: 80,
         decoration: BoxDecoration(
@@ -70,115 +64,53 @@ class CleanLayout extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround, 
           children: [
-            // --- BAGIAN ICON BERANDA + TEKS ---
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.home_filled,
-                    color: Colors.grey, // Warna hijau Al-Qur'an
-                    size: 28,
-                  ),
-                  SizedBox(height: 4), // Jarak antara icon dan teks
-                  Text(
-                    "Beranda",
-                    style: TextStyle(
-                      color: Colors.grey, // Warna teks sama dengan icon
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            // 1. Beranda
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.home_filled, color: Color(0xFF008E5B), size: 28),
+                SizedBox(height: 4),
+                Text("Beranda", style: TextStyle(color: Color(0xFF008E5B), fontSize: 11)),
+              ],
             ),
-
-            // --- ICON AL-QURAN + TEKS ---
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.menu_book_rounded, // Icon buku/Al-Quran
-                    color: Colors.grey, // Warna default (belum aktif)
-                    size: 28,
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    "Al-Quran",
-                    style: TextStyle(
-                      color: Colors.grey, // Warna teks abu-abu
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            // 2. Al-Quran
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.menu_book_rounded, color: Colors.grey, size: 28),
+                SizedBox(height: 4),
+                Text("Al-Quran", style: TextStyle(color: Colors.grey, fontSize: 11)),
+              ],
             ),
-
-            // --- ICON ARTIKEL + TEKS ---
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.article_outlined, // Icon artikel/kertas
-                    color: Colors.grey, 
-                    size: 28,
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    "Artikel",
-                    style: TextStyle(
-                      color: Colors.grey, 
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            // 3. Artikel
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.article_outlined, color: Colors.grey, size: 28),
+                SizedBox(height: 4),
+                Text("Artikel", style: TextStyle(color: Colors.grey, fontSize: 11)),
+              ],
             ),
-
-            // --- ICON KALENDER + TEKS ---
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.calendar_month_outlined, // Icon kalender
-                    color: Colors.grey, 
-                    size: 28,
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    "Kalender",
-                    style: TextStyle(
-                      color: Colors.grey, 
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            // 4. Kalender
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.calendar_month_outlined, color: Colors.grey, size: 28),
+                SizedBox(height: 4),
+                Text("Kalender", style: TextStyle(color: Colors.grey, fontSize: 11)),
+              ],
             ),
-            // ----------------------------------
-            
-            // Sisa area kosong (1 SizedBox tersisa)
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
-            const Expanded(child: SizedBox()),
+            // 5. Pengaturan
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.settings_outlined, color: Colors.grey, size: 28),
+                SizedBox(height: 4),
+                Text("Pengaturan", style: TextStyle(color: Colors.grey, fontSize: 11)),
+              ],
+            ),
           ],
         ),
       ),
