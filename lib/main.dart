@@ -140,9 +140,36 @@ class CleanLayout extends StatelessWidget {
                 ],
               ),
             ),
+
+            // --- ICON KALENDER + TEKS ---
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.calendar_month_outlined, // Icon kalender
+                    color: Colors.grey, 
+                    size: 28,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Kalender",
+                    style: TextStyle(
+                      color: Colors.grey, 
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // ----------------------------------
             
-            // Sisa area kosong (2 SizedBox tersisa)
+            // Sisa area kosong (1 SizedBox tersisa)
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
