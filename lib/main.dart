@@ -60,7 +60,7 @@ class CleanLayout extends StatelessWidget {
         ],
       ),
       
-      // Bottom Navigation Bar (Dibuat putih polos agar menyatu)
+      // Bottom Navigation Bar with Beranda Icon
       bottomNavigationBar: Container(
         height: 80,
         decoration: BoxDecoration(
@@ -68,6 +68,39 @@ class CleanLayout extends StatelessWidget {
           border: Border(
             top: BorderSide(color: Colors.grey.withOpacity(0.1), width: 1),
           ),
+        ),
+        child: Row(
+          children: [
+            // --- BAGIAN ICON BERANDA + TEKS ---
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.home_filled,
+                    color: Color.fromARGB(255, 61, 63, 62), // Warna hijau Al-Qur'an
+                    size: 28,
+                  ),
+                  SizedBox(height: 4), // Jarak antara icon dan teks
+                  Text(
+                    "Beranda",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 61, 63, 62), // Warna teks sama dengan icon
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // ----------------------------------
+            
+            // Sisanya dibiarkan kosong (SizedBox) sesuai permintaan
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
+          ],
         ),
       ),
     );
