@@ -93,9 +93,34 @@ class CleanLayout extends StatelessWidget {
                 ],
               ),
             ),
+
+            // --- ICON AL-QURAN + TEKS ---
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.menu_book_rounded, // Icon buku/Al-Quran
+                    color: Colors.grey, // Warna default (belum aktif)
+                    size: 28,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Al-Quran",
+                    style: TextStyle(
+                      color: Colors.grey, // Warna teks abu-abu
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // ----------------------------------
             
-            // Sisanya dibiarkan kosong (SizedBox) sesuai permintaan
+            // Sisa area kosong (3 SizedBox tersisa)
+            const Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
             const Expanded(child: SizedBox()),
