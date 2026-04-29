@@ -19,7 +19,6 @@ Proyek ini adalah tugas UAS Mata Kuliah **Mobile Programming** dengan fokus pada
     - [ ] Icon Profil/Lainnya & Label.
 - [ ] Implementasi Header (Informasi Waktu Salat & Lokasi).
 - [ ] Implementasi Grid Menu Utama di Body.
-      [x] Icon Al-Qur'an & Label (Menu Utama).
 
 ### 3. Tahap Integrasi Data & Fitur (Minggu 3-4)
 - [ ] Penambahan Asset Icon Custom (Gambar PNG/SVG).

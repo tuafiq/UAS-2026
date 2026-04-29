@@ -85,11 +85,38 @@ class CleanLayout extends StatelessWidget {
                           color: Color(0xFF546E7A),
                           fontWeight: FontWeight.w500,
                         ),
-                      ),
-                    ],
+                   ),
+                ],
+              ),
+              // --- ICON KEDUA: WIRID & DOA ---
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFE0F2F1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.front_hand_rounded,
+                      color: Color(0xFF008E5B),
+                      size: 28,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    "Wirid & Doa",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Color(0xFF546E7A),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
               ),
+            ],
+          ),
             ),
           ],
         ),
@@ -111,9 +138,9 @@ class CleanLayout extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Icon(Icons.home_filled, color: Color(0xFF008E5B), size: 28),
+                Icon(Icons.home_filled, color: Colors.grey, size: 28),
                 SizedBox(height: 4),
-                Text("Beranda", style: TextStyle(color: Color(0xFF008E5B), fontSize: 11)),
+                Text("Beranda", style: TextStyle(color: Colors.grey, fontSize: 11)),
               ],
             ),
             // 2. Al-Quran
