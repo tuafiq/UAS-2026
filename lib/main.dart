@@ -51,6 +51,21 @@ class CleanLayout extends StatelessWidget {
             ],
           ),
           const Expanded(child: SizedBox()),
+          
+          // GridView untuk Icon Layanan
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 4,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 10,
+              children: [
+                // DI SINI TEMPAT KITA AKAN MASUKKAN ICON SATU PER SATU
+              ],
+            ),
+          ),
         ],
       ),
       
